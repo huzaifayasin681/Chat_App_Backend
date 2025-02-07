@@ -12,11 +12,12 @@ const app = express();
 const server = http.createServer(app);
 app.use(
   cors({
-    origin: "https://chat-app-frontend-one-ebon.vercel.app", // Update with your Vercel frontend URL
+    origin: ["https://chat-app-frontend-one-ebon.vercel.app", "http://localhost:3000"], // Allow both Vercel and local frontend
     methods: "GET, POST, PUT, DELETE",
     credentials: true, // If using cookies
   })
 );
+
 
 app.use(express.json());
 
